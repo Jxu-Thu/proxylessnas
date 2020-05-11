@@ -68,6 +68,8 @@ if __name__ == '__main__':
     os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 
     os.makedirs(args.path, exist_ok=True)
+    import pdb
+    pdb.set_trace()
 
     # prepare run config
     run_config_path = '%s/run.config' % args.path
@@ -113,8 +115,6 @@ if __name__ == '__main__':
             raise ValueError('do not support: %s' % args.net)
 
     # build run manager
-    import pdb
-    pdb.set_trace()
     run_manager = RunManager(args.path, net, run_config, measure_latency=args.latency)
     run_manager.save_config(print_info=True)
 
