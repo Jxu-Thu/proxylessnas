@@ -36,9 +36,9 @@ parser.add_argument('-a', '--arch', metavar='ARCH', default='resnet50',
 parser.add_argument('--num-classes', type=int, default=1000,
                     help='The number of classes in the dataset.')
 
-parser.add_argument('--train-dir', default=os.path.expanduser('/ssd/dataset/imagenet/train'),
+parser.add_argument('--train-dir', default=os.path.expanduser('/blob/imagenet/raw-data/train'),
                     help='path to training data')
-parser.add_argument('--val-dir', default=os.path.expanduser('/ssd/dataset/imagenet/val'),
+parser.add_argument('--val-dir', default=os.path.expanduser('/blob/imagenet/raw-data/val'),
                     help='path to validation data')
 parser.add_argument('--log-dir', default='./logs',
                     help='tensorboard log directory')
