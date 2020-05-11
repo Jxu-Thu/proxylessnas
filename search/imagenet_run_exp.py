@@ -113,6 +113,8 @@ if __name__ == '__main__':
             raise ValueError('do not support: %s' % args.net)
 
     # build run manager
+    import pdb
+    pdb.set_trace()
     run_manager = RunManager(args.path, net, run_config, measure_latency=args.latency)
     run_manager.save_config(print_info=True)
 
