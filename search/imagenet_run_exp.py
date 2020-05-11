@@ -68,8 +68,6 @@ if __name__ == '__main__':
     os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 
     os.makedirs(args.path, exist_ok=True)
-    import pdb
-    pdb.set_trace()
 
     # prepare run config
     run_config_path = '%s/run.config' % args.path
@@ -94,6 +92,9 @@ if __name__ == '__main__':
     print('Run config:')
     for k, v in run_config.config.items():
         print('\t%s: %s' % (k, v))
+    import pdb
+
+    pdb.set_trace()
 
     # prepare network
     net_config_path = '%s/net.config' % args.path
