@@ -370,6 +370,8 @@ class ArchSearchRunManager:
                     # compute output
                     self.net.reset_binary_gates()  # random sample binary gates
                     self.net.unused_modules_off()  # remove unused module for speedup
+                    import pdb
+                    pdb.set_trace()
                     output = self.run_manager.net(images)  # forward (DataParallel)
                     # loss
                     if self.run_manager.run_config.label_smoothing > 0:
