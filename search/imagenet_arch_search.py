@@ -205,8 +205,8 @@ if __name__ == '__main__':
                 print('fail to load models')
 
     # warmup
-    if arch_search_run_manager.warmup:
-        arch_search_run_manager.warm_up(warmup_epochs=args.warmup_epochs)
+    # if arch_search_run_manager.warmup:
+    #     arch_search_run_manager.warm_up(warmup_epochs=args.warmup_epochs)
 
     # joint training
     arch_search_run_manager.train(fix_net_weights=args.debug)

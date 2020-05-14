@@ -340,6 +340,8 @@ class ArchSearchRunManager:
         )
 
         update_schedule = self.arch_search_config.get_update_schedule(nBatch)
+        import pdb
+        pdb.set_trace()
 
         for epoch in range(self.run_manager.start_epoch, self.run_manager.run_config.n_epochs):
             print('\n', '-' * 30, 'Train epoch: %d' % (epoch + 1), '-' * 30, '\n')
