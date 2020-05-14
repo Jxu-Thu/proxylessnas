@@ -101,8 +101,6 @@ parser.add_argument('--rl_tradeoff_ratio', type=float, default=0.1)
 
 
 if __name__ == '__main__':
-    import pdb
-    pdb.set_trace()
     args = parser.parse_args()
 
     torch.manual_seed(args.manual_seed)
@@ -147,7 +145,7 @@ if __name__ == '__main__':
         conv_candidates=args.conv_candidates, n_classes=run_config.data_provider.n_classes, width_mult=args.width_mult,
         bn_param=(args.bn_momentum, args.bn_eps), dropout_rate=args.dropout
     )
-
+    pdb.set_trace()
     # build arch search config from args
     if args.arch_opt_type == 'adam':
         args.arch_opt_param = {
@@ -184,6 +182,7 @@ if __name__ == '__main__':
     print('Architecture Search config:')
     for k, v in arch_search_config.config.items():
         print('\t%s: %s' % (k, v))
+    pdb.set_trace()
 
     # arch search run manager
     arch_search_run_manager = ArchSearchRunManager(args.path, super_net, run_config, arch_search_config)
