@@ -193,6 +193,8 @@ class RunManager:
         self.print_net_info(measure_latency)
 
         self.criterion = nn.CrossEntropyLoss()
+        import pdb
+        pdb.set_trace()
         if self.run_config.no_decay_keys:
             keys = self.run_config.no_decay_keys.split('#')
             self.optimizer = self.run_config.build_optimizer([

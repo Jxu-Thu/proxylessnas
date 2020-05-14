@@ -59,6 +59,7 @@ parser.add_argument('--dropout', type=float, default=0)
 
 
 if __name__ == '__main__':
+    # python imagenet_run_exp.py --path Exp/proxyless_gpu --train --net proxyless_gpu --dropout 0.3
     args = parser.parse_args()
 
     torch.manual_seed(args.manual_seed)
@@ -92,9 +93,6 @@ if __name__ == '__main__':
     print('Run config:')
     for k, v in run_config.config.items():
         print('\t%s: %s' % (k, v))
-    import pdb
-
-    pdb.set_trace()
 
     # prepare network
     net_config_path = '%s/net.config' % args.path
@@ -115,9 +113,15 @@ if __name__ == '__main__':
         else:
             raise ValueError('do not support: %s' % args.net)
 
+    import pdb
+
+    pdb.set_trace()
+
     # build run manager
     run_manager = RunManager(args.path, net, run_config, measure_latency=args.latency)
     run_manager.save_config(print_info=True)
+    import pdb
+    pdb.set_trace()
 
     # load checkpoints
     init_path = '%s/init' % args.path
