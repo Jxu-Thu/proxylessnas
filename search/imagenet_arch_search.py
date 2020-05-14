@@ -7,7 +7,7 @@ import argparse
 from models import ImagenetRunConfig
 from nas_manager import *
 from models.super_nets.super_proxyless import SuperProxylessNASNets
-
+# python imagenet_arch_search.py --path '/blob/v-jinx/checkpoints/proxylessnas'
 # ref values
 ref_values = {
     'flops': {
@@ -101,6 +101,8 @@ parser.add_argument('--rl_tradeoff_ratio', type=float, default=0.1)
 
 
 if __name__ == '__main__':
+    import pdb
+    pdb.set_trace()
     args = parser.parse_args()
 
     torch.manual_seed(args.manual_seed)
