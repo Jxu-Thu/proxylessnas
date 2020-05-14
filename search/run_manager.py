@@ -197,6 +197,7 @@ class RunManager:
         pdb.set_trace()
         if self.run_config.no_decay_keys:
             keys = self.run_config.no_decay_keys.split('#')
+            # keys : ['bn']
             self.optimizer = self.run_config.build_optimizer([
                 self.net.module.get_parameters(keys, mode='exclude'),  # parameters with weight decay
                 self.net.module.get_parameters(keys, mode='include'),  # parameters without weight decay

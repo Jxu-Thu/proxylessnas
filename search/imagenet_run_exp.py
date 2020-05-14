@@ -113,15 +113,11 @@ if __name__ == '__main__':
         else:
             raise ValueError('do not support: %s' % args.net)
 
-    import pdb
-
-    pdb.set_trace()
 
     # build run manager
     run_manager = RunManager(args.path, net, run_config, measure_latency=args.latency)
     run_manager.save_config(print_info=True)
-    import pdb
-    pdb.set_trace()
+    
 
     # load checkpoints
     init_path = '%s/init' % args.path
@@ -147,6 +143,7 @@ if __name__ == '__main__':
         net.load_state_dict(init['state_dict'])
     else:
         print('Random initialization')
+
 
     # train
     if args.train:

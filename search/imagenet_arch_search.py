@@ -138,6 +138,8 @@ if __name__ == '__main__':
         '5x5_MBConv3', '5x5_MBConv6',
         '7x7_MBConv3', '7x7_MBConv6',
     ]
+    import pdb
+    pdb.set_trace()
     super_net = SuperProxylessNASNets(
         width_stages=args.width_stages, n_cell_stages=args.n_cell_stages, stride_stages=args.stride_stages,
         conv_candidates=args.conv_candidates, n_classes=run_config.data_provider.n_classes, width_mult=args.width_mult,
