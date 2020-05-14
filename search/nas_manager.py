@@ -388,6 +388,8 @@ class ArchSearchRunManager:
                     # compute gradient and do SGD step
                     self.run_manager.net.zero_grad()  # zero grads of weight_param, arch_param & binary_param
                     loss.backward()
+                    import pdb
+                    pdb.set_trace()
                     self.run_manager.optimizer.step()  # update weight parameters
                     # unused modules back
                     self.net.unused_modules_back()

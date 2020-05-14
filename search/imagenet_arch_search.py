@@ -7,7 +7,8 @@ import argparse
 from models import ImagenetRunConfig
 from nas_manager import *
 from models.super_nets.super_proxyless import SuperProxylessNASNets
-# python imagenet_arch_search.py --path '/blob/v-jinx/checkpoints/proxylessnas'
+
+# CUDA_VISIBLE_DEVICES=0 python imagenet_arch_search.py --path '/blob/v-jinx/checkpoints/proxylessnas'
 # ref values
 ref_values = {
     'flops': {
